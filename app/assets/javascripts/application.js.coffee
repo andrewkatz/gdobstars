@@ -1,0 +1,10 @@
+#= require jquery
+#= require jquery_ujs
+#= require jquery.ui.autocomplete
+#= require turbolinks
+#= require underscore
+#= require bootstrap
+#= require angular
+#= require angular-resource
+#= require angular/app
+#= require_tree .

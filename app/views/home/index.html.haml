@@ -1,0 +1,44 @@
+.nominations-wrapper{ :"ng-controller" => "NominationCtrl" }
+  %div{ :"ng-repeat" => "nomination in nominations" }
+    %timer{ :"n-type" => "{{ nomination.type }}", :"n-receiver" => "{{ nomination.receiver }}",
+      :"n-reason" => "{{ nomination.reason }}", :"n-expire" => "{{ nomination.expire }}",
+      :"n-id" => "{{ nomination.id }}", :"n-update-fn" => "shiftNominations(nomination)",
+      :"n-second-fn" => "secondNomination(nomination)" }
+
+.stars-wrapper{ :"ng-controller" => "UserListCtrl" }
+  %button#nominateBtn.btn{ :type => "button", :"data-toggle" => "modal", :"data-target" => "#nominateModal" }
+    Nominate
+  %table.table.table-striped
+    %thead
+      %tr
+        %th{ width: 150 } Name
+        %th Stars
+        %th Wins
+    %tbody.ng-cloak
+      %tr{ :"ng-repeat" => "user in users | filter:query" }
+        %td{ :"ng-show" => "{{ user.active }}" } {{ user.name }}
+        %td.inactive{ :"ng-hide" => "{{ user.active }}" }
+          %button.btn{ type: "button" } Nominate for activation
+          {{ user.name }}
+        %td.stars
+          %span{ :"ng-show" => "{{ user.active }}" }
+            %span.glyphicon.glyphicon-star{ :"ng-repeat" => "n in [] | range:user.stars" }
+        %td.ticks
+          %span{ :"ng-show" => "{{ user.active }}" }
+            %span.glyphicon.glyphicon-certificate{ :"ng-repeat" => "n in [] | range:user.ticks" }
+
+  .modal.fade#nominateModal{ :tabindex => "-1", :role => "dialog", :"aria-labelledby" => "nominateModalLabel",
+    :"aria-hidden" => "true" }
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{ :type => "button", :"data-dismiss" => "modal", :"aria-hidden" => true } &times;
+          %h4.modal-title#nominateModalLabel Nominate somebody for a star
+        .modal-body
+          .form-group
+            %input.form-control#nominateUserInput{ :"ng-model" => "nominatedUser", :placeholder => "Type a name..." }
+          .form-group
+            %input.form-control{ :"ng-model" => "nominatedReason", :placeholder => "Why do they deserve a star?" }
+        .modal-footer
+          %button.btn{ :type => "button", :"data-dismiss" => "modal" } Close
+          %button.btn{ :type => "button", :"ng-click" => "nominate()" } Nominate

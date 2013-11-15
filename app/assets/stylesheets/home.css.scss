@@ -1,0 +1,52 @@
+.stars-wrapper
+{
+  table
+  {
+    font-size: 18px;
+
+    td.inactive
+    {
+      color: $gray;
+      font-style: italic;
+
+      .btn
+      {
+        padding: 2px 8px;
+        margin-right: 10px;
+      }
+    }
+
+    td.stars
+    {
+      color: $gd-orange;
+
+      .no-stars
+      {
+        color: $gray;
+        font-style: italic;
+      }
+    }
+
+    td.ticks
+    {
+      color: $gd-green;
+
+      .no-ticks
+      {
+        color: $gray;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+input.filter
+{
+  border: 0;
+  padding: 6px 12px;
+}
+
+#nominateBtn
+{
+  display: none;
+}

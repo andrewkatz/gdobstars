@@ -1,0 +1,23 @@
+%h1 Listing nominations
+
+%table
+  %tr
+    %th Active
+    %th Reason
+    %th Type
+    %th
+    %th
+    %th
+
+  - @nominations.each do |nomination|
+    %tr
+      %td= nomination.active
+      %td= nomination.reason
+      %td= nomination.type
+      %td= link_to 'Show', nomination
+      %td= link_to 'Edit', edit_nomination_path(nomination)
+      %td= link_to 'Destroy', nomination, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Nomination', new_nomination_path

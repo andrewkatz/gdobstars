@@ -8,10 +8,10 @@
 .stars-wrapper{ :"ng-controller" => "UserListCtrl" }
   %button#nominateBtn.btn{ :type => "button", :"data-toggle" => "modal", :"data-target" => "#nominateModal" }
     Nominate
-  %table.table.table-striped
+  %table.table.table-striped.table-hover
     %thead
       %tr
-        %th{ width: 150 } Name
+        %th{ width: 400 } Name
         %th Stars
         %th Wins
     %tbody.ng-cloak

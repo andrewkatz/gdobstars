@@ -5,6 +5,7 @@ ruby '1.9.3'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -47,7 +48,6 @@ gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
-gem 'mysql2'
 gem 'sendgrid'
 
 gem 'awesome_print'
@@ -73,3 +73,4 @@ group :test do
   gem 'mocha', :require => 'mocha/api'
 end
 
+gem 'rails_12factor', group: :production

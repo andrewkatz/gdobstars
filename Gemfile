@@ -73,4 +73,7 @@ group :test do
   gem 'mocha', :require => 'mocha/api'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
+end

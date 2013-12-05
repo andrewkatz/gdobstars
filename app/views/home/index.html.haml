@@ -18,7 +18,7 @@
       %tr{ :"ng-repeat" => "user in users | filter:query" }
         %td{ :"ng-show" => "{{ user.active }}" } {{ user.name }}
         %td.inactive{ :"ng-hide" => "{{ user.active }}" }
-          %button.btn{ type: "button" } Nominate for activation
+          -# %button.btn{ type: "button" } Nominate for activation
           {{ user.name }}
         %td.stars
           %span{ :"ng-show" => "{{ user.active }}" }
@@ -38,7 +38,7 @@
           .form-group
             %input.form-control#nominateUserInput{ :"ng-model" => "nominatedUser", :placeholder => "Type a name..." }
           .form-group
-            %input.form-control{ :"ng-model" => "nominatedReason", :placeholder => "Why do they deserve a star?" }
+            %input.form-control#nominateReason{ :"ng-model" => "nominatedReason", :placeholder => "Why do they deserve a star?" }
         .modal-footer
           %button.btn{ :type => "button", :"data-dismiss" => "modal" } Close
-          %button.btn{ :type => "button", :"ng-click" => "nominate()" } Nominate
+          %button.btn{ :type => "button", :"data-dismiss" => "modal", :"ng-click" => "nominate()" } Nominate

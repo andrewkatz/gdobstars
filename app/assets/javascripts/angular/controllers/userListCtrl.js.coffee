@@ -12,7 +12,7 @@ angular.module("starsApp").controller("UserListCtrl", ["$scope", "$timeout", "Us
     )
 
   $scope.nominate = ->
-    receiver_id = _.find($scope.users, (u) -> u.name == $scope.nominatedUser )
+    receiver_id = _.find($scope.users, (u) -> u.name.toLowerCase() == $scope.nominatedUser.toLowerCase() )
 
     unless receiver_id
       alert("User doesn't exist bro")
@@ -21,9 +21,6 @@ angular.module("starsApp").controller("UserListCtrl", ["$scope", "$timeout", "Us
     receiver_id = receiver_id.id
 
     $.post("/nominations", { nomination: { receiver_id: receiver_id, action: "Star nomination for", reason: $scope.nominatedReason } })
-    # $("#nominateModal").hide()
-    # $("#nominateUserInput").val("")
-    # $("#nominateReason").val("")
 
   $scope.updateUsers()
 ])

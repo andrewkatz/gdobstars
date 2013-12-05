@@ -2,7 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$("#nominateNav").click ->
+$("#nominateNav").click (e) ->
+  e.preventDefault()
+  $("#nominateUserInput").val("")
+  $("#nominateReason").val("")
   $("#nominateBtn").click()
-  $("#nominateUserInput").focus()
-  false
+
+$(document).keydown (e) ->
+  if e.keyCode == 78
+    e.preventDefault()
+    $("#nominateNav").click()

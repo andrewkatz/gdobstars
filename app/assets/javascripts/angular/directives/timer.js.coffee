@@ -34,9 +34,7 @@ angular.module("starsApp").directive "timer", ($timeout) ->
   link: (scope, element, attr) ->
     scope.$watch "nExpire", (nExpire) ->
       scope.second = ->
-        # element.remove()
         scope.nSecondFn()
-
 
       duration = Date.parse(nExpire) - Date.now()
 

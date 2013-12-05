@@ -20,6 +20,7 @@ describe UsersController do
   describe "GET index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
+      user.increment_stars!
       get :index, { :format =>"json" }, valid_session
       assigns(:users).should eq([@user, user])
     end

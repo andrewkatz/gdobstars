@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.order('stars DESC').load
   end
 
   # GET /items/1.json

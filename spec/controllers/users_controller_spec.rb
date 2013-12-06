@@ -22,7 +22,7 @@ describe UsersController do
       user = User.create! valid_attributes
       user.increment_stars!
       get :index, { :format =>"json" }, valid_session
-      assigns(:users).should eq([@user, user])
+      assigns(:users).should eq([user, @user])
     end
   end
 

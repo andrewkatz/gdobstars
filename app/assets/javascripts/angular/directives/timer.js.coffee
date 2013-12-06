@@ -29,7 +29,20 @@ angular.module("starsApp").directive "timer", ($timeout) ->
     nUpdateFn: "&"
     nSecondFn: "&"
 
-  templateUrl: "assets/angular/templates/timer.html"
+  template: '''
+    <div class="panel panel-info nomination-panel">
+      <div class="panel-body">
+        <strong>
+          {{ nType }} for {{ nReceiver }}
+        </strong>
+        {{ nReason }}
+        <span class="pull-right">
+          <span class="time-remaining"></span>
+          <button type="button" class="btn" ng-click="second()">+1</button>
+        </span>
+      </div>
+    </div>
+  '''
 
   link: (scope, element, attr) ->
     scope.$watch "nExpire", (nExpire) ->

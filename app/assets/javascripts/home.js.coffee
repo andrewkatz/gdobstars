@@ -8,7 +8,7 @@ $("#nominateNav").click (e) ->
   $("#nominateReason").val("")
   $("#nominateBtn").click()
 
-$(document).keydown (e) ->
-  if e.keyCode == 78
-    e.preventDefault()
-    $("#nominateNav").click()
+# $(document).keydown (e) ->
+#   if e.keyCode == 78
+#     e.preventDefault()
+#     $("#nominateNav").click()

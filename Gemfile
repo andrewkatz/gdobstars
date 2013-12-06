@@ -52,7 +52,6 @@ gem 'sendgrid'
 gem 'awesome_print'
 
 gem 'angularjs-rails'
-gem 'angular-rails-templates'
 
 group :development do
   gem 'better_errors'

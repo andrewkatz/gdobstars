@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -53,6 +52,7 @@ gem 'sendgrid'
 gem 'awesome_print'
 
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
 
 group :development do
   gem 'better_errors'

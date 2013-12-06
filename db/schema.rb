@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131115054804) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "nominations", force: true do |t|
     t.boolean  "active",       default: true
     t.string   "reason"

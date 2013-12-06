@@ -1,4 +1,4 @@
-starsApp = angular.module("starsApp", ["userServices", "nominationServices"])
+starsApp = angular.module("starsApp", ["templates", "userServices", "nominationServices"])
 
 starsApp.config ($httpProvider) ->
   authToken = $("meta[name=\"csrf-token\"]").attr("content")

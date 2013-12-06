@@ -7,4 +7,5 @@
 #= require angular
 #= require angular-resource
 #= require angular/app
+#= require_tree ./angular/templates
 #= require_tree .

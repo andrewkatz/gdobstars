@@ -33,7 +33,7 @@ angular.module("starsApp").directive "timer", ($timeout) ->
     <div class="panel panel-info nomination-panel">
       <div class="panel-body">
         <strong>
-          {{ nType }} for {{ nReceiver }}
+          {{ nType }} {{ nReceiver }}
         </strong>
         {{ nReason }}
         <span class="pull-right">
